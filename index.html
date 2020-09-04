@@ -1,14 +1,115 @@
 <!DOCTYPE html>
 <html>
+<title>Le Mans School of AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('matt-palmer-254999.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
 <body>
-<h1>LeMans School of AI</h1>
-<p>LeMans School of AI est le rendez-vous des professionnels pour apprendre à utiliser le meilleur des algorithmes de Machine et Deep Learning.</p>
-<p>Liens :</p>
-<ul>
-  <li>Le Repo Github <a href="https://github.com/LeMans-SchoolofAI">LeMans-SchoolofAI</a> </li>
-  <li>La Page FB <a href="https://www.facebook.com/LeMansSchoolofAI">LeMansSchoolofAI</a> </li>
-  <li>Le Medium <a href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887?source=friends_link&sk=dc97f30947c9d234fee451b0828c3d85">Les 12 leçons apprises de 3 saisons de LeMans School of AI</a> </li>  
-</ul>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <p>Le Mans School of AI</p>
+  </div>
+  <div class="w3-display-topright w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('agenda').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Agenda</button></p>
+    <p><button onclick="document.getElementById('mission').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Mission</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Contact</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">Le jeudi de 18h30 à 20h00</p>
+    <p class="w3-large"><a href="https://goo.gl/maps/uksc122KqH1mbJ7i7">Le Mans Innovation | 57 bd Demorieux</a></p>
+  </div>
+</div>
+
+<!-- AGENDA Modal -->
+<div id="agenda" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-dark-grey w3-display-container">
+      <span onclick="document.getElementById('agenda').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1 class="w3-center">Agenda 2020-2021</h1>
+    </div>
+    <div class="w3-container">
+      <p><b>Lancement de la Saison 4</b>, le 03 sept 2020 par Vincent</p>
+    </div>
+    <div class="w3-container w3-deep-orange">
+      <h5>Prochaine Session</h5>
+      <h2><b>Introdution à l'Intelligence Artificielle</b></h2>
+      <h5>le 17 sept 2020 par Olivier</h5>
+    </div>
+    <div class="w3-container">
+      <h5><b>Du perceptron au Deep Learninig</b>, le 01 octobre  2020 par Olivier</h5>
+      <h5><b>Generative Adverserial Networks (initiation)</b>, le octobre par Jean-Baptiste et Paul</h5>
+      <h5><b>Generative Adverserial Networks (avancé)</b>, le 05 novembre par Jean-Baptiste et Paul</h5>
+      <h5><b>Système d'Informations Géographiques, concepts et cas d'usages</b>, le 19 novembre par Thibault et Hugo</h5>
+      <h5><b>BeerGame - Reinforcement Learning (initiation)</b>, le 03 decembre par Gaetan</h5>
+      <h5><b>BeerGame - Reinforcement Learning (avancé)</b>, le 10 decembre par Gaetan</h5>
+      <h5><b>WINTER FEST</b>, le 17 decembre Au Barouf (centre ville)</h5>
+      <h5><b>Les applications des modèles GPT</b>, le 07 janvier par Antoine</h5>
+      <h5><b>OCR, NLP et Gestion Documentaire (initiation)</b>, le 21 janvier par Pierre</h5>
+      <h5><b>OCR, NLP et Gestion Documentaire (avancé)</b>, le 04 mars par Pierre</h5>
+      <h5><b>Tracking d'objet</b>, le 18 fevrier par Mickael</h5>
+      <h5><b>IA embarquée et véhicule autonome (initiation)</b>, le 11 mars par Guillaume et Thomas</h5>
+      <h5><b>IA embarquée et véhicule autonome (avancé)</b>, le 11 mars par Guillaume et Thomas</h5>
+      <h5><b>Algorithmes Lasso et Ridge</b>, le 08 avril par Thibault</h5>
+      <h5><b>Intelligence Augmentée en entreprise</b>, le 22 avril par Anastasia</h5>
+      <h5><b>Datascience en marketing</b>, le 20 mai par Sakina</h5>
+      <h5><b>Framework AI</b>, le 03 juin par Zakaria</h5>
+      <h5><b>Retour d'experiences sur la préparation des données</b>, le 17 juin par Vincent</h5>
+      <h5><b>SUMMER FEST</b>, le 01 juillet Au Barouf (centre ville)</h5>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION Modal -->
+<div id="mission" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-deep-orange w3-display-container">
+      <span onclick="document.getElementById('mission').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1 class="w3-center">La Mission de Le Mans School of AI</h1>
+    </div>
+    <div class="w3-container">
+      <h2 class="w3-center">Former gratuitement les étudiants et les professionnels<br>aux techniques de Machine Learning et de Deep Learning</h2>
+      <ul>
+        <li class="w3-large">Nos soirées sont décomposées en cycles de de 2 ateliers par thème,</li>
+        <li class="w3-large">Le premier atelier pour initier, le second pour approfondir un point particulier sur ce thème,</li>
+        <li class="w3-large">Chaque cycle est organisé par un membre du groupe,
+        <li class="w3-large">Chaque membre relaye auprès de ses réseaux, la tenue des prochains évènements,</li>
+        <li class="w3-large">Les algorithmes présentés sont mis à disposition dans le <a href="https://github.com/lemans-schoolofai">repo github du groupe</a>,</li>
+        <li class="w3-large">Nous utilisons la <a href="https://signal.org/install">messagerie Signal</a> pour organiser et annoncer les évènements.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-deep-orange">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Pour participer</h1>
+    </div>
+    <div class="w3-container">
+      <ul>
+        <li class="w3-large">Par messenger / FB <a href="https://www.facebook.com/LeMansSchoolofAI/">Page Le Mans School of AI</a></li>
+        <li class="w3-large">Par la <a href="https://signal.org/install">messagerie Signal</a> puis envoyer un message au +33638112524</li>
+        <li class="w3-large">Par <a href="https://fr.linkedin.com/in/vincentporte">messagerie Linkedin</a></li>
+        <li class="w3-large">En savoir plus sur l'histoire du groupe ? RDV sur Medium <a href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887">Les 12 leçons apprises en 3 saisons de LeMans School of AI</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
- 
