@@ -1,0 +1,142 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    background-image: url("background_img.png");
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Change link color and already visited link color */
+a {
+    color: #00ffff;
+}
+
+a:visited {
+    color: #ff00ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 41px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.2 is the opacity */
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.agenda, .friends, .contact {
+    margin-bottom: 30px;
+}
+
+.agenda h2, .friends h2, .contact h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.agenda ul, .friends ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.agenda li, .friends li {
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 18px;
+}
+
+.contact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact .lk-icon {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    
+    .agenda h2, .friends h2, .contact h2 {
+        font-size: 20px;
+    }
+    
+    .contact p {
+        font-size: 16px;
+    }
+}
+
+.highlight {
+    background-color: red;
+    font-weight: bold;
+}
+
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.current {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+nav ul li a:visited {
+    color: #fff;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+
+
+

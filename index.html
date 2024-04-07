@@ -1,154 +1,77 @@
 <!DOCTYPE html>
-<html>
-<title>Le Mans School of AI</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('background_img.png');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
-<script>
-    window.onload = function(){
-        let GaetanLink = document.getElementById('GaetanLink');
-        GaetanLink.href = 'https://www.linkedin.com/in/gaetangottis';
-        let PierreLink = document.getElementById('PierreLink');
-        PierreLink.href = 'https://www.linkedin.com/in/pierre-cartier';
-    };
-    </script>
+<html lang="fr">
+<head>
+    <title>Le Mans School of AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/05d05a7e19.js" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</head>
 <body>
+    <nav>
+        <ul>
+            <li><a class="current" href="index.html">Accueil</a></li>
+            <li><a href="past.html">Notre histoire et événements marquants</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Le Mans School of AI</h1>
+            <h2>La mission du groupe</h2>
+            <p>Le Mans School of AI est un groupe de partage de connaissances techniques liées à l'intelligence artificelle.</p>
+            <p>Tous les ateliers et conférences sont gratuits. Ils sont organisés par n'importe quel membre volontaire du groupe.</p>
+            <p>Le groupe est conposé de débutants et d'aguerris, et chacun est le bienvenu.</p>
+            <p>Vous pouvez retrouver les anciennes présentation et certains codes sources directement sur le <a href="https://github.com/lemans-schoolofai">répertoire github du groupe</a>.</p>
+        </header>
+        
+        <section class="agenda">
+            <h2>Agenda des événements</h2>
+            <div>
+                <h3>Événements à venir</h3>
+                <ul class="upcoming-events">
+                    <!-- Add more upcoming events as needed -->
+                </ul>
+            </div>
+            <div>
+                <h3>Événements passés</h3>
+                <ul class="past-events">
+                    <!-- Add more past events as needed -->
+                </ul>
+            </div>
+        </section>
 
-<div class="bgimg w3-display-container w3-text-white">
-  <div class="w3-display-middle w3-xxxlarge">
-    <p>Le Mans School of AI</p>
-  </div>
-  <div class="w3-display-topright w3-container w3-xlarge">
-    <p><button onclick="window.location.href='https://www.meetup.com/fr-FR/le-mans-school-of-ai/';" class="w3-button w3-dark-grey w3-round-medium">Meetup</button>
-      <button onclick="document.getElementById('agenda').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Agenda</button> 
-     <button onclick="document.getElementById('mission').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Mission</button> 
-     <button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Contact</button>
-     <button onclick="document.getElementById('friends').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Nos amis devs</button></p>
-  </div>
-  <div class="w3-display-bottomright w3-container">
-    <p class="w3-xlarge">Le jeudi de 18h30 à 20h00</p>
-    <p class="w3-large"><a href="https://goo.gl/maps/uksc122KqH1mbJ7i7">Le Mans Innovation | 57 bd Demorieux, 2ème étage</a></p>
-  </div>
-  <div class="w3-display-bottomright w3-container">
- <!--     <p class="w3-xlarge">Nos amis devs sur Le Mans</p> -->
-<!--     <p class="w3-xlarge"> -->
-<!--     </p> -->
-  </div>
-</div>  
-      
-<!-- AGENDA Modal -->
-<div id="agenda" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-dark-grey w3-display-container">
-      <span onclick="document.getElementById('agenda').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1 class="w3-center">Agenda 2023-2024</h1><br/>
-      <h5 class="w3-center">Cette saison, petit changement d'organisation.</h5>
-      <h5 class="w3-center">Collaboration avec le GDG pour les conférences, avec un rythme d'environ 1 fois par mois.</h5>
-      <h5 class="w3-center">Préparation du sujet des 24h du code 2024 en complément</h5>
-    </div>
-    <div class="w3-container"> 
-      <p>
-      <b>Lancement saison 7</b>, le 7 septembre 2023 </br> 
-      </p>
-      <!-- Past events -->
-      <h5><b>Introduction à l'IA -- 1ère partie</b>, le 28 sept 2023 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>Introduction à l'IA -- 2nde partie </b>, le 12 octobre 2023 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>💻 OpenSource Project -- Kick Off ! </b>, le 26 octobre 2023</h5>
-      <h5><b><a href="https://github.com/LeMans-SchoolofAI/Meetup-Deepfake">DeepFakes - Image et voix </a></b>, le 9 novembre 2023 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a></h5>
-      <h5><b>💻 OpenSource Project -- point de passage </b>, le 23 novembre 2023</h5>
-      <h5><b>🍻 BeerFest d'hiver ! ❄️🍻</b>, le 21 décembre 2023</h5>
-      <h5><b>Introduction  l'IA -- Spécial "résolutions" 2024</b>, le 11 janvier 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>💻 OpenSource Project -- point de passage </b>, le 25 janvier 2024</h5>
-      <h5><b>💻 OpenSource Project -- session collaborative </b>, le 8 février 2024</h5>
-      
-    </div>
-    
-    <div class="w3-container w3-deep-orange">  <!-- Next event -->
-      <h5>Prochaine Session</h5>
-      <h2><b>L'IA dans la génération de Musique</b>, le 14 mars 2024</h2>
-    </div>
-    
-    <div class="w3-container"> 
-      <!-- <h2><b>L'IA dans la recherche en sociologie</b>, le 7 décembre 2023 par Nicolas</h2> -->
-      <h5><b>Tout (ou presque) sur les LLMs / Du LLM à AutoGPT </b>, le 28 mars 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>Retours d'expérience: Les 24h du code #2024 </b>, le 11 avril 2024</h5>
-      
-      <!-- Upcoming events -->
-      
-<!--       <h5><b>Sujets à définir</b>, le ??? par ???</h5>
-                <h5><b>Sujet possible : Reconnaissance de visage de vaches et OCR</b>, pas de date définie</h5> -->
-      <!--       <h5><b>Sujet possible : Symbioide (LMI)</b>, pas de date définie</h5> -->
-      <!--       <h5><b>Sujet possible : Reinforcement Learning</b>, pas de date définie, Gaetan ?</h5> -->
-    </div>
-  </div>
-</div>
-
- <!-- MISSION Modal -->
-<div id="mission" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-deep-orange w3-display-container">
-      <span onclick="document.getElementById('mission').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1 class="w3-center">La Mission de Le Mans School of AI</h1>
-    </div>
-    <div class="w3-container">
-      <h2 class="w3-center">Former gratuitement les étudiants et les professionnels<br>aux techniques de Machine Learning et de Deep Learning</h2>
-      <ul>
-        <li class="w3-large">Nos soirées sont organisés tour à tour par les membres volontaires du groupe,</li>
-        <li class="w3-large">Chaque membre relaye auprès de ses réseaux, la tenue des prochains évènements,</li>
-        <li class="w3-large">Les algorithmes présentés sont mis à disposition dans le <a href="https://github.com/lemans-schoolofai">repo github du groupe</a>,</li>
-        <li class="w3-large">Nous utilisons la <a href="https://signal.org/install">messagerie Signal</a> pour organiser et annoncer les évènements.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Contact Modal -->
-<div id="contact" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-deep-orange">
-      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Pour participer</h1>
-    </div>
-    <div class="w3-container">
-      <ul>
-        <li class="w3-large">Par messenger / FB <a href="https://www.facebook.com/LeMansSchoolofAI/">Page Le Mans School of AI</a></li>
-        <li class="w3-large">Par la <a href="https://signal.org/install">messagerie Signal</a> puis envoyer un message au +33662079458</li>
-<!--         <li class="w3-large">Par <a href="https://fr.linkedin.com/in/vincentporte">messagerie Linkedin</a></li> -->
-        <li class="w3-large">En savoir plus sur l'histoire du groupe ? RDV sur Medium <a href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887">Les 12 leçons apprises en 3 saisons de LeMans School of AI</a></li>
-      </ul>
-
-    </div>
-  </div>
-</div>
+        <section class="map">
+            <h2>Location</h2>
+            <p>La grande majorité de nos soirées ont lieu à</p>
+            <p>Le Mans Innovation | 57 bd Demorieux, 2ème étage</p>
+            <p>Le jeudi de 18h30 à 20h00</p>
+            <!-- Embed openstreetmap -->
+            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=0.17108201980590823%2C47.987810588127466%2C0.19940614700317386%2C47.99918354563481&amp;layer=mapnik&amp;marker=47.99349738020801%2C0.18524408340454102" style="border: 1px solid black"></iframe><br/>
+            <p><a href="https://www.openstreetmap.org/?mlat=47.9935&amp;mlon=0.1852#map=16/47.9935/0.1852">Afficher la carte plus grande</a></p>
+            <p>ou <a href="https://goo.gl/maps/uksc122KqH1mbJ7i7">Google maps</a></p>        
+        <section class="friends">
+            <h2>Our Friends</h2>
+            <ul>
+                <li><a href="<INSERT FRIEND'S WEBSITE URL>">Friend 1</a></li>
+                <li><a href="<INSERT FRIEND'S WEBSITE URL>">Friend 2</a></li>
+                <!-- Add more friend's links as needed -->
+            </ul>
+        </section>
+        
+        <section class="contact" tabindex="-1">
+            <h2>Contact</h2>
+            <!-- Linkedin of Pierre and Gaetan with Linkedin Icon -->
+            <ul>
+                <li><a class="lk-icon" href="https://www.linkedin.com/in/gaetangottis"><i class="fa-brands fa-linkedin"></i></a> <a href="https://www.linkedin.com/in/gaetangottis">Gaetan Gottis</a></li>
+                <li><a class="lk-icon" href="https://www.linkedin.com/in/pierre-cartier"><i class="fa-brands fa-linkedin"></i></a> <a href="https://www.linkedin.com/in/pierre-cartier">Pierre Cartier</a></li>
+            </ul>
 
 
-<!-- FRIENDS Modal -->
-<div id="friends" class="w3-modal">  
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-dark-grey w3-display-container">
-      <span onclick="document.getElementById('friends').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <div class="w3-center">
-        <p><a href="https://www.meetup.com/fr-FR/GDG-Le-Mans/"><img src="https://secure.meetupstatic.com/photos/event/9/5/8/9/clean_483458281.jpeg" alt="GDG Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://www.meetup.com/fr-FR/Meetup-numerique-agilite-Co/"><img src="https://secure.meetupstatic.com/photos/event/5/e/7/6/clean_489924182.jpeg" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://www.eventbrite.fr/o/la-ruche-numerique-un-service-cci-le-mans-sarthe-10657551269"><img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125469149%2F160944896798%2F1%2Foriginal.20210208-090129?w=480&auto=format%2Ccompress&q=75&sharp=10&rect=65%2C0%2C480%2C480&s=0c9505dff33624cf8e6cc539e93a8273" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://www.linkedin.com/company/le-mans-jug/"><img src="https://media-exp1.licdn.com/dms/image/C560BAQFjGoz3m4t9ag/company-logo_200_200/0/1667989721094?e=1677715200&v=beta&t=4UvHSxR9V5qveIdji80QiI9YEa7IoX_GDrIcB8Gojoo" alt="JUG Logo" style="max-width:300px; height:auto;"></a></p>
-    
-      </div>
+        </section>
     </div>
-  </div>
-</div>
-
 </body>
 </html>
