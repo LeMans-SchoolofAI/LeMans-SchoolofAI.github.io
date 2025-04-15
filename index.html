@@ -15,15 +15,51 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
+.highlight {
+  background-color: #ffeb3b; /* Couleur pour mettre en lumière le prochain événement */
+}
 </style>
 <script>
     window.onload = function(){
-        let GaetanLink = document.getElementById('GaetanLink');
-        GaetanLink.href = 'https://www.linkedin.com/in/gaetangottis';
-        let PierreLink = document.getElementById('PierreLink');
-        PierreLink.href = 'https://www.linkedin.com/in/pierre-cartier';
+        // Fonction pour organiser les événements
+        function organizeEvents() {
+            const today = new Date();
+            const eventsContainer = document.getElementById('events-container');
+            const pastEventsContainer = document.getElementById('past-events');
+            const nextEventContainer = document.getElementById('next-event');
+            const futureEventsContainer = document.getElementById('future-events');
+            const ideasEventsContainer = document.getElementById('ideas-events');
+
+            const events = Array.from(eventsContainer.children);
+            let nextEvent = null;
+            let nextEventDate = null;
+
+            events.forEach(event => {
+                const dateStr = event.innerText.match(/\d{1,2} (janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre) \d{4}/i);
+                if (dateStr) {
+                    const eventDate = new Date(dateStr[0].replace(/(\d{1,2}) (\w+) (\d{4})/, '$2 $1 $3'));
+                    if (eventDate < today) {
+                        pastEventsContainer.appendChild(event);
+                    } else if (!nextEventDate || eventDate < nextEventDate) {
+                        nextEvent = event;
+                        nextEventDate = eventDate;
+                    } else {
+                        futureEventsContainer.appendChild(event);
+                    }
+                } else {
+                    // Si la date n'est pas définie, on considère que c'est un événement non planifié
+                    ideasEventsContainer.appendChild(event);
+                }
+            });
+
+            if (nextEvent) {
+                nextEventContainer.appendChild(nextEvent);
+            }
+        }
+
+        organizeEvents();
     };
-    </script>
+</script>
 <body>
 
 <div class="bgimg w3-display-container w3-text-white">
@@ -32,8 +68,8 @@ body, html {height: 100%}
   </div>
   <div class="w3-display-topright w3-container w3-xlarge">
     <p><button onclick="window.location.href='https://www.meetup.com/fr-FR/le-mans-school-of-ai/';" class="w3-button w3-dark-grey w3-round-medium">Meetup</button>
-      <button onclick="document.getElementById('agenda').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Agenda</button> 
-     <button onclick="document.getElementById('mission').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Mission</button> 
+      <button onclick="document.getElementById('agenda').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Agenda</button>
+     <button onclick="document.getElementById('mission').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Mission</button>
      <button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Contact</button>
      <button onclick="document.getElementById('friends').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Nos amis devs</button></p>
   </div>
@@ -46,8 +82,8 @@ body, html {height: 100%}
 <!--     <p class="w3-xlarge"> -->
 <!--     </p> -->
   </div>
-</div>  
-      
+</div>
+
 <!-- AGENDA Modal -->
 <div id="agenda" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
@@ -56,40 +92,40 @@ body, html {height: 100%}
       <h1 class="w3-center">Agenda 2024-2025</h1><br/>
       <h5 class="w3-center">Préparation du sujet des 24h du code 2025 en complément, contactez Pierre pour rejoindre la team organisation</h5>
     </div>
-    <div class="w3-container"> 
-      <p>
-      <b>Lancement saison 8</b>, le 5 septembre 2024 <br/> 
-      </p>
-      <!-- Past events -->
-      <h5><b>Introduction à l'IA -- 1ère partie</b>, le 19 sept 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
+    <div class="w3-container w3-grey">
+      <h5>Événements passés</h5>
+    </div>
+    <div class="w3-container" id="past-events">
+    </div>
+    <div class="w3-container w3-deep-orange" id="next-event">
+      <h5>Prochaine Session</h5>
+    </div>
+    <div class="w3-container w3-grey">
+      <h5>Événements futurs</h5>
+    </div>
+    <div class="w3-container" id="future-events">
+    </div>
+    <div class="w3-container w3-grey">
+      <h5>Idées, non planifié</h5>
+    </div>
+    <div class="w3-container" id="ideas-events">
+    </div>
+    <div id="events-container" style="display:none;">
+      <h5><b>Lancement saison 8</b>, le 5 septembre 2024</h5>
+      <h5><b>Introduction à l'IA -- 1ère partie</b>, le 19 septembre 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
       <h5><b>Introduction à l'IA -- 2nde partie </b>, le 3 octobre 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
       <h5><b>Brainstorming pour le sujet des 24h du code 2025</b>, le 17 octobre 2024</h5>
-      
-    </div>
-    
-    <div class="w3-container w3-deep-orange">  <!-- Next event -->
-      <h5>Prochaine Session</h5>
-      <h2><b>RAG pour l'entreprise -- 1ère partie</b>, le 14 nov 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a></h2>
-    </div>
-
-          <!-- Upcoming events -->
-
-    <div class="w3-container">
-      <h5><b>RAG et GraphRAG pour l'entreprise -- 2ème partie </b>, le 21 nov 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre et Mustafa</a></h5>
+      <h5><b>RAG pour l'entreprise -- 1ère partie</b>, le 14 novembre 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a></h5>
+      <h5><b>RAG et GraphRAG pour l'entreprise -- 2ème partie </b>, le 21 novembre 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a> et <a href="https://www.linkedin.com/in/moustaphatsm/">Mustafa</a></h5>
+      <h5><b>IA et Machine Learning : Introduction à la recherche par similarité </b>, le 9 janvier 2025 par <a href="https://www.linkedin.com/in/vyacheslav-efimov/">Slava</a></h5>
       <h5><b>Hardware et edge AI</b>, date non définie</h5>
-      <h5><b>AI Assistants</b>, date non définie</h5>
       <h5><b>Intégrer l'IA dans une appli web (client side)</b>, date non définie</h5>
       <h5><b>Retour aux bases du Machine Learning</b>, date non définie</h5>
       <h5><b>Génération d'images</b>, date non définie</h5>
-      <!-- <h2><b>L'IA dans la recherche en sociologie</b>, le 7 décembre 2023 par Nicolas</h2> -->
-   <!--    <h5><b>Tout (ou presque) sur les LLMs / Du LLM à AutoGPT </b>, le ??? 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5> -->
-    <!--   <h2><b>L'IA dans la génération de Musique</b>, le ??? 2024</h2> -->
-      
-      
-<!--       <h5><b>Sujets à définir</b>, le ??? par ???</h5>
-                <h5><b>Sujet possible : Reconnaissance de visage de vaches et OCR</b>, pas de date définie</h5> -->
-      <!--       <h5><b>Sujet possible : Symbioide (LMI)</b>, pas de date définie</h5> -->
-      <!--       <h5><b>Sujet possible : Reinforcement Learning</b>, pas de date définie, Gaetan ?</h5> -->
+      <h5><b>Découvrir l’IA No-code avec n8n - Retour d’expérience du Shift hackathon 2025</b>, le 15 mai 2025, lien d'inscription gratuite : <a href="https://www.meetup.com/le-mans-school-of-ai/events/307101750/">Inscription</a></h5>
+      <h5><b>Les agents IA et function calls - Retour d’expérience des 24h code 2025</b>, le 22 mai 2025, <b>ATTENTION, aura lieu au Blue Zinc</b>, lien d'inscription gratuite : <a href="https://www.meetup.com/le-mans-school-of-ai/events/307193854/">Inscription</a></h5>
+
+
     </div>
   </div>
 </div>
@@ -127,14 +163,12 @@ body, html {height: 100%}
 <!--         <li class="w3-large">Par <a href="https://fr.linkedin.com/in/vincentporte">messagerie Linkedin</a></li> -->
         <li class="w3-large">En savoir plus sur l'histoire du groupe ? RDV sur Medium <a href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887">Les 12 leçons apprises en 3 saisons de LeMans School of AI</a></li>
       </ul>
-
     </div>
   </div>
 </div>
 
-
 <!-- FRIENDS Modal -->
-<div id="friends" class="w3-modal">  
+<div id="friends" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-dark-grey w3-display-container">
       <span onclick="document.getElementById('friends').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -143,7 +177,6 @@ body, html {height: 100%}
         <p><a href="https://www.meetup.com/fr-FR/Meetup-numerique-agilite-Co/"><img src="https://secure.meetupstatic.com/photos/event/5/e/7/6/clean_489924182.jpeg" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
         <p><a href="https://www.eventbrite.fr/o/la-ruche-numerique-un-service-cci-le-mans-sarthe-10657551269"><img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125469149%2F160944896798%2F1%2Foriginal.20210208-090129?w=480&auto=format%2Ccompress&q=75&sharp=10&rect=65%2C0%2C480%2C480&s=0c9505dff33624cf8e6cc539e93a8273" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
         <p><a href="https://lemansjug.wordpress.com/"><img src="https://lemansjug.wordpress.com/wp-content/uploads/2022/10/jug-title.png" alt="JUG Logo" style="max-width:300px; height:auto;"></a></p>
-    
       </div>
     </div>
   </div>
