@@ -1,186 +1,165 @@
 <!DOCTYPE html>
-<html>
-<title>Le Mans School of AI</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('background_img.png');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-.highlight {
-  background-color: #ffeb3b; /* Couleur pour mettre en lumière le prochain événement */
-}
-</style>
-<script>
-    window.onload = function(){
-        // Fonction pour organiser les événements
-        function organizeEvents() {
-            const today = new Date();
-            const eventsContainer = document.getElementById('events-container');
-            const pastEventsContainer = document.getElementById('past-events');
-            const nextEventContainer = document.getElementById('next-event');
-            const futureEventsContainer = document.getElementById('future-events');
-            const ideasEventsContainer = document.getElementById('ideas-events');
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Mans School of AI</title>
+  <meta name="language" content="fr-FR"> 
+  <meta name="description" content="Groupe d'entraide de Machine Learning et de Deep Learning">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le Mans School of AI">
+  <meta property="og:title" content="Le Mans School of AI">
+  <meta property="og:description" content="Groupe d'entraide de Machine Learning et de Deep Learning pour les étudiants et les professionnels">
+  <meta property="og:url" content="https://lemans-schoolofai.github.io/">
+  <meta property="og:image" content="/background_img.png">  
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link defer rel="stylesheet" href="./styles.css">
+  <script defer src="./script.js"></script>
+</head>
 
-            const events = Array.from(eventsContainer.children);
-            let nextEvent = null;
-            let nextEventDate = null;
-
-            events.forEach(event => {
-                const dateStr = event.innerText.match(/\d{1,2} (janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre) \d{4}/i);
-                if (dateStr) {
-                    const eventDate = new Date(dateStr[0].replace(/(\d{1,2}) (\w+) (\d{4})/, '$2 $1 $3'));
-                    if (eventDate < today) {
-                        pastEventsContainer.appendChild(event);
-                    } else if (!nextEventDate || eventDate < nextEventDate) {
-                        nextEvent = event;
-                        nextEventDate = eventDate;
-                    } else {
-                        futureEventsContainer.appendChild(event);
-                    }
-                } else {
-                    // Si la date n'est pas définie, on considère que c'est un événement non planifié
-                    ideasEventsContainer.appendChild(event);
-                }
-            });
-
-            if (nextEvent) {
-                nextEventContainer.appendChild(nextEvent);
-            }
-        }
-
-        organizeEvents();
-    };
-</script>
 <body>
+<header>
+  <div class="header-nav">
+    <h2 class="title-mobile">Le Mans School of AI</h2>
+  <div class="menu-nav">
+    <nav>
+      <!-- Bouton hamburger -->
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
 
-<div class="bgimg w3-display-container w3-text-white">
-  <div class="w3-display-middle w3-xxxlarge">
-    <p>Le Mans School of AI</p>
-  </div>
-  <div class="w3-display-topright w3-container w3-xlarge">
-    <p><button onclick="window.location.href='https://www.meetup.com/fr-FR/le-mans-school-of-ai/';" class="w3-button w3-dark-grey w3-round-medium">Meetup</button>
-      <button onclick="document.getElementById('agenda').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Agenda</button>
-     <button onclick="document.getElementById('mission').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Mission</button>
-     <button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Contact</button>
-     <button onclick="document.getElementById('friends').style.display='block'" class="w3-button w3-dark-grey w3-round-medium">Nos amis devs</button></p>
-  </div>
-  <div class="w3-display-bottomright w3-container">
-    <p class="w3-xlarge">Le jeudi de 18h30 à 20h00</p>
-    <p class="w3-large"><a href="https://goo.gl/maps/uksc122KqH1mbJ7i7">Le Mans Innovation | 57 bd Demorieux, 2ème étage</a></p>
-  </div>
-  <div class="w3-display-bottomright w3-container">
- <!--     <p class="w3-xlarge">Nos amis devs sur Le Mans</p> -->
-<!--     <p class="w3-xlarge"> -->
-<!--     </p> -->
-  </div>
-</div>
-
-<!-- AGENDA Modal -->
-<div id="agenda" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-dark-grey w3-display-container">
-      <span onclick="document.getElementById('agenda').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1 class="w3-center">Agenda 2024-2025</h1><br/>
-      <h5 class="w3-center">Préparation du sujet des 24h du code 2025 en complément, contactez Pierre pour rejoindre la team organisation</h5>
-    </div>
-    <div class="w3-container w3-grey">
-      <h5>Événements passés</h5>
-    </div>
-    <div class="w3-container" id="past-events">
-    </div>
-    <div class="w3-container w3-deep-orange" id="next-event">
-      <h5>Prochaine Session</h5>
-    </div>
-    <div class="w3-container w3-grey">
-      <h5>Événements futurs</h5>
-    </div>
-    <div class="w3-container" id="future-events">
-    </div>
-    <div class="w3-container w3-grey">
-      <h5>Idées, non planifié</h5>
-    </div>
-    <div class="w3-container" id="ideas-events">
-    </div>
-    <div id="events-container" style="display:none;">
-      <h5><b>Lancement saison 8</b>, le 5 septembre 2024</h5>
-      <h5><b>Introduction à l'IA -- 1ère partie</b>, le 19 septembre 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>Introduction à l'IA -- 2nde partie </b>, le 3 octobre 2024 par <a href="https://www.linkedin.com/in/gaetangottis">Gaétan</a></h5>
-      <h5><b>Brainstorming pour le sujet des 24h du code 2025</b>, le 17 octobre 2024</h5>
-      <h5><b>RAG pour l'entreprise -- 1ère partie</b>, le 14 novembre 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a></h5>
-      <h5><b>RAG et GraphRAG pour l'entreprise -- 2ème partie </b>, le 21 novembre 2024 par <a href="https://www.linkedin.com/in/pierre-cartier">Pierre</a> et <a href="https://www.linkedin.com/in/moustaphatsm/">Mustafa</a></h5>
-      <h5><b>IA et Machine Learning : Introduction à la recherche par similarité </b>, le 9 janvier 2025 par <a href="https://www.linkedin.com/in/vyacheslav-efimov/">Slava</a></h5>
-      <h5><b>Hardware et edge AI</b>, date non définie</h5>
-      <h5><b>Intégrer l'IA dans une appli web (client side)</b>, date non définie</h5>
-      <h5><b>Retour aux bases du Machine Learning</b>, date non définie</h5>
-      <h5><b>Génération d'images</b>, date non définie</h5>
-      <h5><b>Découvrir l’IA No-code avec n8n - Retour d’expérience du Shift hackathon 2025</b>, le 15 mai 2025, lien d'inscription gratuite : <a href="https://www.meetup.com/le-mans-school-of-ai/events/307101750/">Inscription</a></h5>
-      <h5><b>Les agents IA et function calls - Retour d’expérience des 24h code 2025</b>, le 22 mai 2025, <b>ATTENTION, aura lieu au Blue Zinc</b>, lien d'inscription gratuite : <a href="https://www.meetup.com/le-mans-school-of-ai/events/307193854/">Inscription</a></h5>
-
-
-    </div>
-  </div>
-</div>
-
- <!-- MISSION Modal -->
-<div id="mission" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-deep-orange w3-display-container">
-      <span onclick="document.getElementById('mission').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1 class="w3-center">La Mission de Le Mans School of AI</h1>
-    </div>
-    <div class="w3-container">
-      <h2 class="w3-center">Former gratuitement les étudiants et les professionnels<br>aux techniques de Machine Learning et de Deep Learning</h2>
-      <ul>
-        <li class="w3-large">Nos soirées sont organisés tour à tour par les membres volontaires du groupe,</li>
-        <li class="w3-large">Chaque membre relaye auprès de ses réseaux, la tenue des prochains évènements,</li>
-        <li class="w3-large">Les algorithmes présentés sont mis à disposition dans le <a href="https://github.com/lemans-schoolofai">repo github du groupe</a>,</li>
-        <li class="w3-large">Nous utilisons la <a href="https://signal.org/install">messagerie Signal</a> pour organiser et annoncer les évènements.</li>
+      <!-- Menu -->
+      <ul class="nav-ul" id="nav-menu">
+        <li><a class="link-anim" href="https://www.meetup.com/fr-FR/le-mans-school-of-ai/" target="_blank" aria-label="Lien vers Meetup">Meetup</a></li>
+        <li><a class="link-anim" href="#info">Mission</a></li>
+        <li><a class="link-anim" href="#agenda">Agenda</a></li>
+        <li><a class="link-anim" href="#contact">Contact</a></li>
+        <li><a class="link-anim" href="#dev-friends">Nos amis devs</a></li>
       </ul>
+    </nav>
+  </div>
+  </div>
+  <div class="banner">
+    <img src="./background_img.png" alt="image d'un robot" aria-label="background du header">
+    <div class="mission">
+      <h1>Le Mans School of AI</h1>
+      <span><strong>C'est quoi ?</strong></span>
+      <p>Un groupe d'entraide pour former gratuitement les étudiants et les professionnels
+        aux techniques de Machine Learning et de Deep Learning</p>
+      <p><i class="fa-solid fa-calendar-days"></i> Le jeudi de 18h30 à 20h00</p>
+      <button class="location"><i class="fa-solid fa-location-pin"></i><a href="https://goo.gl/maps/uksc122KqH1mbJ7i7" aria-label="Lieu sur google maps" target='_blank'> Le Mans Innovation | 57 bd Demorieux, 2ème étage</a></button><br/>
+      <button class="btn margin-space"><a href="https://www.meetup.com/fr-FR/le-mans-school-of-ai/" target='_blank'>Rejoins-nous sur Meetup <i class="fa-brands fa-meetup"></i></a></button>
     </div>
   </div>
-</div>
-
-<!-- Contact Modal -->
-<div id="contact" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-deep-orange">
-      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <h1>Pour participer</h1>
-    </div>
-    <div class="w3-container">
-      <ul>
-        <li class="w3-large">Par messenger / FB <a href="https://www.facebook.com/LeMansSchoolofAI/">Page Le Mans School of AI</a></li>
-        <li class="w3-large">Par la <a href="https://signal.org/install">messagerie Signal</a> puis envoyer un message au +33662079458</li>
-<!--         <li class="w3-large">Par <a href="https://fr.linkedin.com/in/vincentporte">messagerie Linkedin</a></li> -->
-        <li class="w3-large">En savoir plus sur l'histoire du groupe ? RDV sur Medium <a href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887">Les 12 leçons apprises en 3 saisons de LeMans School of AI</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- FRIENDS Modal -->
-<div id="friends" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom">
-    <div class="w3-container w3-dark-grey w3-display-container">
-      <span onclick="document.getElementById('friends').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-      <div class="w3-center">
-        <p><a href="https://www.meetup.com/fr-FR/GDG-Le-Mans/"><img src="https://secure.meetupstatic.com/photos/event/9/5/8/9/clean_483458281.jpeg" alt="GDG Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://www.meetup.com/fr-FR/Meetup-numerique-agilite-Co/"><img src="https://secure.meetupstatic.com/photos/event/5/e/7/6/clean_489924182.jpeg" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://www.eventbrite.fr/o/la-ruche-numerique-un-service-cci-le-mans-sarthe-10657551269"><img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125469149%2F160944896798%2F1%2Foriginal.20210208-090129?w=480&auto=format%2Ccompress&q=75&sharp=10&rect=65%2C0%2C480%2C480&s=0c9505dff33624cf8e6cc539e93a8273" alt="AgiLeMans Logo" style="max-width:300px; height:auto;"></a></p>
-        <p><a href="https://lemansjug.wordpress.com/"><img src="https://lemansjug.wordpress.com/wp-content/uploads/2022/10/jug-title.png" alt="JUG Logo" style="max-width:300px; height:auto;"></a></p>
+</header>
+<main>
+  <section id="info">
+    <h2>Comment ça se passe ?</h2>
+    <ul class="info">
+      <li><i class="fa-solid fa-arrow-right"></i> Nos soirées sont organisés tour à tour par les membres volontaires du groupe.</li>
+      <li><i class="fa-solid fa-arrow-right"></i> Chaque membre relaye auprès de ses réseaux, la tenue des prochains évènements.</li>
+      <li><i class="fa-solid fa-arrow-right"></i> Les algorithmes présentés sont mis à disposition dans <a class="link-anim" href="https://github.com/lemans-schoolofai" aria-label="Lien vers le repo du groupe Le Mans School of AI" target='_blank'><strong>le repo github du groupe</strong></a>.</li>
+      <li><i class="fa-solid fa-arrow-right"></i> Nous utilisons notre serveur <a class="link-anim" href="https://discord.gg/kPJEUzDU47" aria-label="Lien vers le serveur Discord" target="_blank"><strong>Discord</strong></a> pour organiser et annoncer les évènements.</li>
+    </ul>
+  </section>
+  <section id="agenda">
+    <h2>Agenda 2025-2026</h2>
+    <span>L'agenda est susceptible d'être modifié au fur et à mesure de l'année.</span>
+    <div class="container-agenda" id="events-container">
+      <div class="column-event mobile" id="past-events">
+        <h3>Événements passés</h3>
+        <ul class="list-event"></ul>
+      </div>
+      <div class="column-event" id="upcoming-events">
+        <h3>Événements à venir</h3>
+        <ul class="list-event"></ul>
+      </div>
+      <div class="column-event" id="ideas-events">
+        <h3>Idées / Non planifié</h3>
+        <ul class="list-event"></ul>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+  <section id="contact">
+    <h2>Pour participer</h2>
+    <p class="text-align"><strong>Contactez-nous par messenger sur :</strong></p>
+    <div class="contact-list">
 
+      <div>
+      <button class="btn align">
+        <i class="fa-brands fa-discord"></i>
+        <a href="https://discord.gg/kPJEUzDU47" aria-label="Lien vers le serveur Discord" target="_blank"> Discord</a>
+      </button>
+      <p class="text-align">Envoyer un message sur notre serveur Discord</p>
+      </div>
+      <p>ou</p>
+      <div>
+      <button class="btn align">
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <a href="https://www.facebook.com/LeMansSchoolofAI/" aria-label="Lien vers la page Le Mans School of AI sur Facebook" target="_blank"> Facebook</a>
+      </button>
+      <p class="text-align">Envoyer un message sur notre groupe Facebook</p>
+      </div>
+    </div>
+  </section>
+  <section id="dev-friends">
+    <h2>Nos amis dev</h2>
+    <div class="container-dev">
+      <div class="dev-card">
+        <a href="https://www.meetup.com/fr-FR/GDG-Le-Mans/" aria-label="Lien vers le groupe GDG sur le site web Meetup" target='_blank'>
+          <img class="logo-dev" src="https://secure.meetupstatic.com/photos/event/9/5/8/9/clean_483458281.jpeg" alt="GDG Logo">
+        </a>
+      </div>
+      <div class="dev-card">
+        <a href="https://www.meetup.com/fr-FR/Meetup-numerique-agilite-Co/" aria-label="Lien vers le groupe AgiLeMans sur le site web Meetup" target='_blank'>
+          <img class="logo-dev" src="https://secure.meetupstatic.com/photos/event/5/e/7/6/clean_489924182.jpeg" alt="AgiLeMans Logo">
+        </a>
+      </div>
+      <div class="dev-card">
+        <a href="https://www.eventbrite.fr/o/la-ruche-numerique-un-service-cci-le-mans-sarthe-10657551269" aria-label="Lien vers Eventbrite concernant la ruche numérique" target='_blank'>
+          <img class="logo-dev" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125469149%2F160944896798%2F1%2Foriginal.20210208-090129?w=480&auto=format%2Ccompress&q=75&sharp=10&rect=65%2C0%2C480%2C480&s=0c9505dff33624cf8e6cc539e93a8273" alt="AgiLeMans Logo">
+        </a>
+      </div>
+      <div class="dev-card">
+        <a href="https://lemansjug.wordpress.com/" aria-label="Lien vers Le Mans JUG" target='_blank'>
+          <img class="logo-dev" src="https://lemansjug.wordpress.com/wp-content/uploads/2022/10/jug-title.png" alt="JUG Logo">
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="column">
+    <h4>Le Mans School of AI</h4>
+    <p>Le jeudi de 18h30 à 20h00 <br> 
+    <i class="fa-solid fa-location-pin"></i> <a class="link-anim" href="https://goo.gl/maps/uksc122KqH1mbJ7i7" aria-label="Lieu sur google maps" target="_blank"><strong>Le Mans Innovation | 57 bd Demorieux, 2ème étage</strong></a></p>
+  </div>
+  <div class="column">
+    <h4>A propos</h4>
+    <p>En savoir plus sur l'histoire du groupe ? <br>
+    RDV sur <a class="link-anim" href="https://medium.com/@vincentporte/les-12-le%C3%A7ons-apprises-en-3-saisons-de-lemans-school-of-ai-43aa6b4a7887" 
+    aria-label="Les 12 leçons apprises en 3 saisons de LeMans School of AI"><strong>Medium</strong></a></p>
+  </div>
+  <div class="column">
+    <h4>Contact</h4>
+    <ul class="social-media">
+      <li class="btn-zoom"><a href="https://www.meetup.com/fr-FR/le-mans-school-of-ai/" aria-label="Page Meetup" target='_blank'><i class="fa-brands fa-meetup"></i></a></li>
+      <li class="btn-zoom"><a class="width-link" href="https://discord.gg/kPJEUzDU47" aria-label="Lien vers le serveur Discord" target='_blank'><i class="fa-brands fa-discord"></i>
+      <li class="btn-zoom"><a href="https://www.facebook.com/LeMansSchoolofAI/" aria-label="Page Facebook" target='_blank'> <i class="fa-brands fa-facebook"></i></a></li>
+      </a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
