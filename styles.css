@@ -438,6 +438,11 @@ h3 {
   margin: 0;
 }
 
+.level-badge {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 #agenda span {
   display: flex;
   flex-direction: column;

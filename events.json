@@ -54,8 +54,10 @@
         "date": "2025-08-28"
     },
     {
-        "title": "JEPA",
-        "date": null
+        "title": "JEPA : comprendre une nouvelle approche de l’IA",
+        "date": "2026-05-21",
+        "organizers": ["Gaëtan", "Antoine"],
+        "level":"Intermédiaire"
     },
     {
         "title": "VEO et ce qu'on peut en faire (Jeux Vidéo)",
@@ -76,7 +78,9 @@
     },
     {
         "title": "Explicabilité en TAL",
-        "date": null
+        "date": "2026-06-25",
+        "organizers": ["Xavier", "Nicolas"],
+        "level":"Avancé"
     },
     {
         "title": "Hardware et edge AI",
@@ -93,6 +97,24 @@
     {
         "title": "Génération d'images",
         "date": null
+    },
+    {
+        "title": "REX du Hackathon Shift 2026",
+        "date": "2026-04-09",
+        "organizers": ["Pierre", "Pierre B.", "Antoine"],
+        "level":"Débutant"
+    },
+    {
+        "title": "RAG épisode #2",
+        "date": "2026-04-30",
+        "organizers": ["Gaëtan"],
+        "level":"Intermédiaire"
+    },
+    {
+        "title": "Claude Code leak : analyse à froid après 500k lignes de code",
+        "date": "2026-06-4",
+        "organizers": ["Pierre B."],
+        "level":"Intermédiaire"
     }
   ]
 }

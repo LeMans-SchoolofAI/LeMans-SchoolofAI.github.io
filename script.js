@@ -98,6 +98,29 @@ function renderEvents(events, organizersDirectory) {
       html += `<button class="${btnClass}"><a href="${event.registration}" target="_blank" style="color:inherit; text-decoration:none;">S'inscrire</a></button>`;
     }
 
+    if (event.level) {
+      let levelColor = "";
+      let levelText = "";
+      switch (event.level.toLowerCase()) {
+        case "débutant":
+          levelColor = "green";
+          levelText = "Débutant";
+          break;
+        case "intermédiaire":
+          levelColor = "orange";
+          levelText = "Intermédiaire";
+          break;
+        case "avancé":
+          levelColor = "red";
+          levelText = "Avancé";
+          break;
+        default:
+          levelColor = "gray";
+          levelText = event.level;
+      }
+      html += `<br><span class="level-badge" style="color: ${levelColor};">${levelText}</span>`;
+    }
+
     li.innerHTML = html;
 
     if (!event.date) {
