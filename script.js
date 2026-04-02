@@ -118,7 +118,7 @@ function renderEvents(events, organizersDirectory) {
           levelColor = "gray";
           levelText = event.level;
       }
-      html += `<br><span class="level-badge" style="color: ${levelColor};">${levelText}</span>`;
+      html += `<br><span class="level-badge" style="color: ${levelColor}; background-color: white; padding: 2px 5px; border-radius: 3px;">${levelText}</span>`;
     }
 
     li.innerHTML = html;
