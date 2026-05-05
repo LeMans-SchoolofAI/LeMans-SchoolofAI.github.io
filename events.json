@@ -81,7 +81,8 @@
         "title": "Explicabilité en TAL",
         "date": "2026-06-25",
         "organizers": ["Xavier", "Nicolas"],
-        "level":"Avancé"
+        "level":"Avancé",
+        "registration":"https://www.meetup.com/le-mans-school-of-ai/events/314642897/"
     },
     {
         "title": "Hardware et edge AI",
