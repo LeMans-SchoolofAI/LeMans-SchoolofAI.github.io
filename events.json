@@ -45,7 +45,7 @@
         "organizers": ["Alexandre"]
     },
     {
-        "title": ""RAG épisode #1",
+        "title": "RAG épisode #1",
         "date": "2026-02-05",
         "organizers": ["Gaëtan"]
     },
@@ -117,7 +117,7 @@
     {
         "title": "Claude Code leak : analyse à froid après 500k lignes de code",
         "date": "2026-06-04",
-        "organizers": ["Gaétan"],
+        "organizers": ["Gaëtan"],
         "level":"Intermédiaire",
         "registration":"https://www.meetup.com/fr-fr/le-mans-school-of-ai/events/314077989/"
     },
