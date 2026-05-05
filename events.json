@@ -45,7 +45,7 @@
         "organizers": ["Alexandre"]
     },
     {
-        "title": "RAG",
+        "title": ""RAG épisode #1",
         "date": "2026-02-05",
         "organizers": ["Gaëtan"]
     },
@@ -55,10 +55,9 @@
     },
     {
         "title": "JEPA : comprendre une nouvelle approche de l’IA",
-        "date": "2026-05-21",
+        "date": "2026-06-11",
         "organizers": ["Gaëtan", "Antoine"],
         "level":"Intermédiaire",
-        "comment":"Attention, ce meetup aura peut-être lieu à la CCI, plus d'infos à venir",
         "registration":"https://www.meetup.com/fr-fr/le-mans-school-of-ai/events/314078061/"
     },
     {
@@ -117,7 +116,7 @@
     {
         "title": "Claude Code leak : analyse à froid après 500k lignes de code",
         "date": "2026-06-04",
-        "organizers": ["Pierre B."],
+        "organizers": ["Gaétan"],
         "level":"Intermédiaire",
         "registration":"https://www.meetup.com/fr-fr/le-mans-school-of-ai/events/314077989/"
     },
@@ -127,13 +126,6 @@
         "organizers": ["Pierre", "Gaëtan", "Antoine"],
         "level":"Débutant",
         "comment":"Attention, ce meetup aura lieu en journée à la CCI, plus d'infos à venir"
-    },
-    {
-        "title": "Vibe-code, no-code et n8n + Beer Summer Fest 🍻",
-        "date": "2026-07-09",
-        "organizers": ["Pierre"],
-        "level":"Débutant",
-        "comment":"Lieu non défini pour le moment, probable participation financière avec une conso au bar"
     }
   ]
 }
