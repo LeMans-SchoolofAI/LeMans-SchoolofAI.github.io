@@ -126,7 +126,8 @@
         "date": "2026-05-21",
         "organizers": ["Pierre", "Gaëtan", "Antoine"],
         "level":"Débutant",
-        "comment":"Attention, ce meetup aura lieu en journée à la CCI, plus d'infos à venir"
+        "registration":"https://evenements.lemans.sarthe.cci.fr/index.php?e=24h-du-code-2026-une-soiree-pour-revivre-l-evenement"
+        "comment":"Attention, ce meetup aura lieu à partir de 18h00 à la CCI et sur inscription uniquement."
     }
   ]
 }
