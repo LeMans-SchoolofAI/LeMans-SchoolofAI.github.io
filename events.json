@@ -122,6 +122,13 @@
         "registration":"https://www.meetup.com/fr-fr/le-mans-school-of-ai/events/314077989/"
     },
     {
+        "title": "Vibe Coding avec Claude : construire une app sans savoir coder",
+        "date": "2026-07-09",
+        "organizers": ["Gaëtan","Pierre B."],
+        "level":"Débutant",
+        "registration":"https://www.meetup.com/le-mans-school-of-ai/events/315099686/"
+    },
+    {
         "title": "REX des 24h du code 2026",
         "date": "2026-05-21",
         "organizers": ["Pierre", "Gaëtan", "Antoine"],
