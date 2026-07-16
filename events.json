@@ -129,6 +129,13 @@
         "registration":"https://www.meetup.com/le-mans-school-of-ai/events/315099686/"
     },
     {
+        "title": "Atelier kickoff Saison 10",
+        "date": "2026-08-27",
+        "organizers": ["Gaëtan"],
+        "registration":"https://www.meetup.com/le-mans-school-of-ai/events/315705012/",
+        "comment":"Attention, ce meetup sert à proposer des sujets pour l'année. Pas de talk IA cette fois ;) "
+    },
+    {
         "title": "REX des 24h du code 2026",
         "date": "2026-05-21",
         "organizers": ["Pierre", "Gaëtan", "Antoine"],
