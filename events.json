@@ -135,6 +135,56 @@
         "registration":"https://www.meetup.com/le-mans-school-of-ai/events/315705012/",
         "comment":"Attention, ce meetup sert à proposer des sujets pour l'année. Pas de talk IA cette fois ;) "
     },
+        {
+        "title": "Avoir son IA 100 % locale",
+        "date": "2026-09-17",
+        "organizers": ["Johann Blanchet"],
+        "level":"Débutant",
+        "registration":"https://www.meetup.com/le-mans-school-of-ai/events/316486735/",
+        "comment":"Attention, le lieu changent pour cette nouvelle saison ! "
+    },
+        {
+        "title": "De l'IA conversationnelle à l'agent multi-contexte",
+        "date": "2026-09-24",
+        "level":"Débutant",
+        "organizers": ["Olivier Thoni"]
+    },
+        {
+        "title": "Codex et Hermes deviennent "1"",
+        "date": "2026-10-08",
+        "level":"Intermédiaire",
+        "organizers": ["Antoine Mairesse"]
+    },
+        {
+        "title": "Créer son appli sans savoir coder",
+        "date": "2026-11-05",
+        "level":"Débutant",
+        "organizers": ["Olivier Thoni"]
+    },
+        {
+        "title": "DLSS : l'IA dans le rendu des jeux vidéos",
+        "date": "2026-11-19",
+        "level":"Intermédiaire",
+        "organizers": ["Gaëtan"]
+    },
+    {
+        "title": "Cowork : l'agent de travail au quotidien",
+        "date": "2026-12-17",
+        "level":"Débutant",
+        "organizers": ["Olivier Heckendorn"]
+    },
+    {
+        "title": "Vibe Code, atelier pratique (1/2)",
+        "date": "2027-01-28",
+        "level":"Débutant",
+        "organizers": ["Éric Robillard"]
+    },
+    {
+        "title": "Vibe Code, atelier pratique (2/2)",
+        "date": "2027-02-11",
+        "level":"Intermédiaire",
+        "organizers": ["Éric Robillard"]
+    },
     {
         "title": "REX des 24h du code 2026",
         "date": "2026-05-21",
